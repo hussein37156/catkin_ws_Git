@@ -1,0 +1,2 @@
+set(pub_sub_MESSAGE_FILES "/home/amr/Jetson_september24/catkin_ws_v2/catkin_ws/src/pub_sub/msg/instance.msg;/home/amr/Jetson_september24/catkin_ws_v2/catkin_ws/src/pub_sub/msg/Multi_instance.msg")
+set(pub_sub_SERVICE_FILES "/home/amr/Jetson_september24/catkin_ws_v2/catkin_ws/src/pub_sub/srv/PointCloudQuery.srv;/home/amr/Jetson_september24/catkin_ws_v2/catkin_ws/src/pub_sub/srv/PointCloudValue.srv")

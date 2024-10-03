@@ -1,0 +1,8 @@
+prefix=/home/amr/Jetson_september24/catkin_ws_v2/catkin_ws/devel
+
+Name: sys_iden
+Description: Description of sys_iden
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

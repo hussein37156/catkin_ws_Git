@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/amr/Jetson_september24/catkin_ws_v2/catkin_ws/devel/setup.sh
