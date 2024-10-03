@@ -60,3 +60,6 @@ while not rospy.is_shutdown():
         image_pub.publish(img_msg)
 
     rospy.sleep(0.1)
+
+
+#done for now
