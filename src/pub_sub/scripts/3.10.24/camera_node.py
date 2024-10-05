@@ -59,7 +59,7 @@ while not rospy.is_shutdown():
         # Publish the image
         image_pub.publish(img_msg)
 
-    rospy.sleep(0.1)
+    rospy.sleep(0.05)
 
 
 #done for now
