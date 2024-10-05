@@ -54,7 +54,7 @@ while not rospy.is_shutdown():
         zed.retrieve_measure(point_cloud, sl.MEASURE.XYZ)
 
         # Convert to ROS messages
-        img_msg = bridge.cv2_to_imgmsg(image.get_data(), encoding="rgba8")
+        img_msg = bridge.cv2_to_imgmsg(image.get_data(), encoding="passthrough")
 
         # Publish the image
         image_pub.publish(img_msg)

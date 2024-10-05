@@ -34,7 +34,12 @@ def getInstanceName(instance_number):
     return labels[instance_number]
 
 def image_callback(img_msg):
-    cv_image = bridge.imgmsg_to_cv2(img_msg, "bgr8")
+
+    #Convert ros msg to cvikage
+    cv_image = bridge.imgmsg_to_cv2(img_msg, "passthrough")
+
+
+
     result = model.predict(source=cv_image, show=False, conf=0.55)
 
     perc23_msg = Multi_instance()  # Initialize message
@@ -79,7 +84,7 @@ def image_callback(img_msg):
             perc23_msg.data[i].x = X_depth / 1000
             perc23_msg.data[i].y = Y_depth / 1000
             perc23_msg.data[i].z = corrected_z[0]  # Access the first element
-            perc23_msg.data[i].confidence = confidence_level / 1000
+            perc23_msg.data[i].confidence = confidence_level 
 
         det_pub.publish(perc23_msg)
 
