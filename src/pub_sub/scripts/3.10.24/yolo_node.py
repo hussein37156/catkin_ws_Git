@@ -7,7 +7,7 @@ from pub_sub.msg import Multi_instance, instance
 from pub_sub.srv import PointCloudValue
 from cv_bridge import CvBridge
 from ultralytics import YOLO
-
+import time
 import numpy as np
 
 rospy.init_node('detection_node')
@@ -36,11 +36,22 @@ def getInstanceName(instance_number):
 def image_callback(img_msg):
 
     #Convert ros msg to cvikage
+
+    start_fetching=time.time()
+
+
     cv_image = bridge.imgmsg_to_cv2(img_msg, "passthrough")
 
+    finsh_fetching=time.time()
 
 
     result = model.predict(source=cv_image, show=False, conf=0.55)
+
+    finsh_predict=time.time()
+
+
+    print("fetching_time"+(-start_fetching+finsh_fetching)+"     ")
+    print("bridge_time"+(finsh_predict-finsh_fetching)+"\n")
 
     perc23_msg = Multi_instance()  # Initialize message
     num_of_instances = result[0].boxes.data.size()[0]
